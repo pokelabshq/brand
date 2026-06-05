@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Poke Labs — Live Dashboard</title>
+<meta http-equiv="refresh" content="60">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;background:#0a0a1a;color:#e0e0e0;line-height:1.6;padding:2rem}
+h1{color:#a78bfa;margin-bottom:.5rem}
+h2{color:#c4b5fd;margin:1.5rem 0 .75rem;font-size:1.2rem}
+.sub{color:#666;margin-bottom:1.5rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem;margin:1rem 0}
+.card{background:#111;border:1px solid #222;border-radius:10px;padding:1.25rem}
+.card .label{color:#666;font-size:.75rem;text-transform:uppercase;letter-spacing:.05rem}
+.card .value{font-size:1.5rem;font-weight:bold;color:#a78bfa;margin-top:.25rem}
+.card .sub{font-size:.75rem;color:#555;margin-top:.25rem}
+.status{display:inline-block;padding:.2rem .6rem;border-radius:12px;font-size:.7rem;font-weight:600}
+.ok{background:rgba(34,197,94,0.15);color:#22c55e}
+.down{background:rgba(239,68,68,0.15);color:#ef4444}
+.warn{background:rgba(234,179,8,0.15);color:#eab308}
+table{width:100%;border-collapse:collapse;margin:1rem 0}
+th,td{text-align:left;padding:.75rem;border-bottom:1px solid #222;font-size:.85rem}
+th{color:#666;text-transform:uppercase;font-size:.75rem}
+a{color:#a78bfa;text-decoration:none}
+a:hover{text-decoration:underline}
+.footer{text-align:center;padding:2rem;color:#444;font-size:.8rem}
+</style>
+</head>
+<body>
+<h1>🐾 Poke Labs Dashboard</h1>
+<p class="sub">Live status of all services, repos, and infrastructure. Auto-refreshes every 60s.</p>
+
+<h2>📊 Overview</h2>
+<div class="grid">
+<div class="card"><div class="label">Services</div><div class="value">9</div><div class="sub">Zero-dependency Python</div></div>
+<div class="card"><div class="label">Skills</div><div class="value">5</div><div class="sub">MIT Licensed</div></div>
+<div class="card"><div class="label">Repos</div><div class="value">5</div><div class="sub">github.com/pokelabshq</div></div>
+<div class="card"><div class="label">License</div><div class="value" style="font-size:1rem">MIT</div><div class="sub">100% Open Source</div></div>
+</div>
+
+<h2>🖥️ Services</h2>
+<table>
+<tr><th>Service</th><th>Port</th><th>Description</th><th>Status</th></tr>
+<tr><td>🔗 Link Preview</td><td><code>:8765</code></td><td>URL metadata extraction, x402 payments</td><td><span class="status down">Down</span></td></tr>
+<tr><td>🌐 Poke Labs Site</td><td><code>:8766</code></td><td>Landing page + Link Preview combo</td><td><span class="status down">Down</span></td></tr>
+<tr><td>🤖 Poke Bot</td><td><code>:8770</code></td><td>GitHub webhook auto-triage</td><td><span class="status down">Down</span></td></tr>
+<tr><td>📱 Telegram Bot</td><td><code>:8777</code></td><td>Daily briefings to Telegram</td><td><span class="status down">Down</span></td></tr>
+<tr><td>🧩 Skills Hub</td><td><code>:8780</code></td><td>Skills directory</td><td><span class="status down">Down</span></td></tr>
+<tr><td>🏪 Skills Marketplace</td><td><code>:8781</code></td><td>Search & install skills</td><td><span class="status ok">Running</span></td></tr>
+<tr><td>📦 Package Registry</td><td><code>:8785</code></td><td>Publish & version packages</td><td><span class="status down">Down</span></td></tr>
+<tr><td>💲 Pricing API</td><td><code>:8790</code></td><td>Real-time service quotes</td><td><span class="status down">Down</span></td></tr>
+<tr><td>💰 Billing Engine</td><td><code>:8795</code></td><td>Subscriptions & invoicing</td><td><span class="status down">Down</span></td></tr>
+</table>
+
+<h2>📦 Repositories</h2>
+<table>
+<tr><th>Repo</th><th>Language</th><th>Description</th></tr>
+<tr><td><a href="https://github.com/pokelabshq/poke">poke</a></td><td>TypeScript</td><td>CLI tool for managing services</td></tr>
+<tr><td><a href="https://github.com/pokelabshq/council">council</a></td><td>Python</td><td>Main project (9 CI workflows)</td></tr>
+<tr><td><a href="https://github.com/pokelabshq/cli">cli</a></td><td>Python</td><td>Python CLI wrapper</td></tr>
+<tr><td><a href="https://github.com/pokelabshq/brand">brand</a></td><td>HTML</td><td>Brand assets + landing page</td></tr>
+<tr><td><a href="https://github.com/pokelabshq/council-website">council-website</a></td><td>HTML</td><td>Landing page</td></tr>
+</table>
+
+<h2>🧩 Installed Skills</h2>
+<table>
+<tr><th>Skill</th><th>Description</th></tr>
+<tr><td>auto-merge-pr</td><td>Auto-merge Dependabot PRs (semver-patch only, squash)</td></tr>
+<tr><td>link-preview-api</td><td>URL metadata extraction with x402 payments</td></tr>
+<tr><td>poke-bot</td><td>GitHub auto-triage with priority/size labels</td></tr>
+<tr><td>pokelabs-site</td><td>Combined landing page + Link Preview API</td></tr>
+<tr><td>repo-monitor</td><td>GitHub health scanner (stale PRs, issues, CI)</td></tr>
+</table>
+
+<div class="footer">
+<p>🐾 Poke Labs — Built by Alexander Wondwossen (13, Toronto)</p>
+<p>MIT License — <a href="https://github.com/pokelabshq">GitHub</a> — <a href="/">Landing Page</a></p>
+</body>
+</html>
